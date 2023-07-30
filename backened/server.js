@@ -1,3 +1,4 @@
+
 const express = require("express");
 const dotenv = require("dotenv");
 const {chats} = require("./data/data");
@@ -6,6 +7,8 @@ const {chats} = require("./data/data");
 const userRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
+const taskRoutes = require("./routes/taskRoutes")
+const dataRoutes = require("./routes/dataRoutes")
 const { notFound, errorHandler } = require("./middleware/errMiddleware");
 const path = require("path");
 const connectDB = require("./config/db");
@@ -28,6 +31,8 @@ app.get("/",(req,res)=>{
 app.use("/api/user",userRoutes);
 app.use("/api/chat",chatRoutes);
 app.use("/api/message",messageRoutes);
+app.use("/api/task",taskRoutes);
+app.use("/api/datavalue",dataRoutes);
 
 
 const server = app.listen(5000,console.log(`the server is running at ${PORT}...`));
@@ -71,6 +76,5 @@ io.on("connection", (socket) => {
   });
     
   });
-
 
 // frontend me socket-io-client versio installl karna  h 

@@ -12,6 +12,7 @@ import Audio from "./otherPages/Audio";
 // import Aauido from "./otherPages/Aauido"
 import ToDoList from "./otherPages/ToDoList";
 import ContactUs from "./otherPages/ContactUs";
+import Post from "./otherPages/Post";
 const App = ()=>{
    return (
     <div className="App">
@@ -19,6 +20,7 @@ const App = ()=>{
         <Route path ="/chats" component = {ChatPage}/>
         <Route path = "/home" component = {Homepages}/>
         <Route path = "/Journel" component = {Journel}/>
+        <Route path = "/Post" component = {Post}/>
         <Route path = "/Meditation" component = {Meditation}/>
         <Route path = "/AboutUs" component= {AboutUs}/>
         <Route path = "/Audio" component= {Audio}/>

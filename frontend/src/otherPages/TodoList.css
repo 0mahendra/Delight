@@ -1,17 +1,16 @@
 
 
-
 .navbar {
 margin-top: 30px;
 font-weight: bolder;
 font-family: "Montserrat-Bold";
 }
 body {
-background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/11/Calm-Full-HD-Wallpaper.jpg");
+background-image: url("https://www.artofliving.org/in-en/app/uploads/2023/06/meditation-incarnation.jpg");
 /* The image used */
 background-color:#FEFAE0 ;
 /* Used if the image is unavailable */
-height: 300px;
+height: 200px;
 /* You must set a specified height */
 background-position: center;
 /* Center the image */
@@ -234,12 +233,12 @@ text-align: center;
 
 
 .Todo{
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;;
   justify-content: center;
   align-items: center;
   color: white;
-  background-color:#5dadf8;
+  /* background-color:#5dadf8; */
 }
 
 .container{
@@ -276,6 +275,8 @@ button{
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 .singleTodo{
     border-radius: 50px;
@@ -283,6 +284,7 @@ button{
     background-color: white;
     padding: 10px 20px;
     display: flex;
+    /* flex-direction: column; */
     width: 450px;
     align-items: center;
 }
@@ -290,3 +292,7 @@ button{
     flex: 1;
     color: black;
 }
+.bgi{
+    background-image: url('https://www.artofliving.org/in-en/app/uploads/2023/06/meditation-incarnation.jpg');
+}
+

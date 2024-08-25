@@ -1,14 +1,14 @@
 
 
 import { AddIcon } from "@chakra-ui/icons";
-import { Box, Stack, Text } from "@chakra-ui/layout";
+import { Box, Stack, Text  } from "@chakra-ui/layout";
 import { useToast } from "@chakra-ui/toast";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { getSender } from "../config/ChatLogics";
 import ChatLoading from "./ChatLoading";
 import GroupChatModal from "./Mislanius/GroupChatModel";
-import { Button } from "@chakra-ui/react";
+import { Button  ,varient} from "@chakra-ui/react";
 import { ChatState } from "../Context/ChatProvider";
 
 const MyChats = ({ fetchAgain }) => {
@@ -55,8 +55,11 @@ const MyChats = ({ fetchAgain }) => {
       p={3}
       bg="white"
       w={{ base: "100%", md: "31%" }}
+      height={"82vh"}
       borderRadius="lg"
       borderWidth="1px"
+      varient = {"ghost"}
+      
     >
       <Box
         pb={3}
@@ -67,17 +70,9 @@ const MyChats = ({ fetchAgain }) => {
         w="100%"
         justifyContent="space-between"
         alignItems="center"
+        
       >
         My Chats
-        <GroupChatModal>
-          <Button
-            d="flex"
-            fontSize={{ base: "17px", md: "10px", lg: "17px" }}
-            rightIcon={<AddIcon />}
-          >
-            New Group Chat
-          </Button>
-        </GroupChatModal>
       </Box>
       <Box
         d="flex"
@@ -85,9 +80,10 @@ const MyChats = ({ fetchAgain }) => {
         p={3}
         bg="#F8F8F8"
         w="100%"
-        h="100%"
+        h="87%"
         borderRadius="lg"
         overflowY="hidden"
+        varient = {"ghost"}
       >
         {chats ? (
           <Stack overflowY="scroll">

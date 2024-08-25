@@ -190,7 +190,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             p={3}
             bg={"#E8E8E8"}
             w={"100%"}
-            h={"100%"}
+            h={"85%"}
             borderRadius={"lg"}
             overflowY={"hidden"}
            >   
@@ -230,7 +230,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         <Box display={"flex"} 
          alignItems={"center"}
          justifyContent={"center"}
-          h={"100%"}
+          h={"80%"}
           >
             <Text fontSize ={"3xl"} pb ={3} fontFamily= "Work sans">
               Click on a user to start chatting

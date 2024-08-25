@@ -1,6 +1,6 @@
 
 body {
-background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/11/Calm-Full-HD-Wallpaper.jpg");
+background-image: url("https://www.artofliving.org/in-en/app/uploads/2023/06/meditation-incarnation.jpg");
 
 background-color: #ECF2FF;
 background-size: cover;
@@ -9,7 +9,7 @@ background-size: cover;
 
 
 .colored-section {
-background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/11/Calm-Full-HD-Wallpaper.jpg");
+background-image: url("https://www.artofliving.org/in-en/app/uploads/2023/06/meditation-incarnation.jpg");
 /* The image used */
 background-color: #E8E2e6;
 /* Used if the image is unavailable */
@@ -37,7 +37,7 @@ font-family: "Montserrat-Bold";
 
 #features {
 position: relative;
-background-color: whitesmoke;
+/* background-color: whitesmoke; */
 color: black;
 }
 .feature-title {
@@ -113,7 +113,7 @@ width:100%;
 input[type=text], select, textarea{
 width: 100%;
 padding: 12px;
-border: 1px solid #ccc;
+/* border: 1px solid #ccc; */
 border-radius: 4px;
 box-sizing: border-box;
 resize: vertical;

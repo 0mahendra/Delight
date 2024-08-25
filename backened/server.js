@@ -9,6 +9,7 @@ const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 const taskRoutes = require("./routes/taskRoutes")
 const dataRoutes = require("./routes/dataRoutes")
+const expRoutes = require("./routes/expRoutes");
 const { notFound, errorHandler } = require("./middleware/errMiddleware");
 const path = require("path");
 const connectDB = require("./config/db");
@@ -33,6 +34,7 @@ app.use("/api/chat",chatRoutes);
 app.use("/api/message",messageRoutes);
 app.use("/api/task",taskRoutes);
 app.use("/api/datavalue",dataRoutes);
+app.use("/api/exp/",expRoutes);
 
 
 const server = app.listen(5000,console.log(`the server is running at ${PORT}...`));

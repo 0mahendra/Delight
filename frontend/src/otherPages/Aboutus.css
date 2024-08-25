@@ -10,11 +10,11 @@ background-size: cover;
 
 .colored-section {
 background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/11/Calm-Full-HD-Wallpaper.jpg");
-/* The image used */
+
 background-color: #E8E2E2;
-/* Used if the image is unavailable */
+
 height: 800px;
-/* You must set a specified height */
+
 background-position: center;
 /* Center the image */
 background-repeat: repeat;

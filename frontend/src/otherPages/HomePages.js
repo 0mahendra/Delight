@@ -1,4 +1,4 @@
-import { Avatar, Box, Menu, MenuButton, MenuDivider, MenuItem, MenuList, Text ,Button, Img} from "@chakra-ui/react";
+import { Avatar, Box, Menu, MenuButton, MenuDivider, MenuItem, MenuList, Text ,Button, Image ,Img, Center, Portal} from "@chakra-ui/react";
 import React, { useState } from "react";
 import ProfileModal from "../Components/Mislanius/ProfileModel";
 import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
@@ -6,6 +6,7 @@ import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 import "./Homepage.css"
+import Header from "./Header";
 
 const HomePages = ()=>{
 
@@ -49,79 +50,68 @@ const HomePages = ()=>{
    }
     return (
         <>
-            <Box
-             w={"100%"}
-             bgColor={"lightblue"} >
-              
-                <Box 
-              display={"flex"}
-              justifyContent={"space-between"}
-              alignItems={"flex-start"}>
-              <Button onClick={Homepage}
-                //   bgColor={"red"}
-                  fontSize={"2xs"}
-                  borderRadius={"30px"}
-                  margin={"auto"}
-                  _hover={{bgColor:"lightgreen"}}> Home</Button>
-                <Button onClick={Chatfunction}
-                //   bgColor={"red"}
-                  fontSize={"2xs"}
-                  borderRadius={"30px"}
-                  margin={"auto"}
+             <Box bgImage={"url('https://www.artofliving.org/in-en/app/uploads/2023/06/meditation-incarnation.jpg')"} position={"relative"} width={"100vw"} height={"auto"} >
+           <Box height={"10vh"} width={"100%"} display={"flex"} flexDirection={"row"} >
+             <Box  height={"10vh"} width={"20%"} display={"flex"} alignItems={"center"}>
+               <Image 
+                borderRadius={"full"}
+                
+                height={"100%"}
+                src="https://res.cloudinary.com/mahisingh/image/upload/v1719895091/10824677_k0smrn.png"
+                 ></Image>
+                 {/* <Text textAlign={"center"} marginTop={"5%"} fontFamily={"work sans"} fontSize={"5xl"} fontWeight={"800"} > Delight </Text> */}
+             </Box>
+             <Box width={"60%"}  display={"flex"} justifyContent={"center"} alignItems={"center"}>
+             <Button onClick={Homepage}
+               
+                   variant={"ghost"}
+                  _hover={{bgColor:"lightgreen"}}> Home</Button>  
+             
+
+             <Button onClick={Chatfunction}
+             
+                   variant={"ghost"}
                   _hover={{bgColor:"lightgreen"}}> Chat Here</Button>
 
-               <Button onClick={Audio}
-                
-                fontSize={"2xs"}
-                borderRadius={"30px"}
-                margin={"auto"}
-                _hover={{bgColor:"lightgreen"}}>Audio</Button>   
+             <Button onClick={Audio}
+              
+                 variant={"ghost"}
+                _hover={{bgColor:"lightgreen"}}>Audio</Button>     
+                 
+                  <Menu>
+                   <MenuButton  variant={"ghost"} as={Button} borderWidth={"0px"} fontSize={"0.5xl"} fontWeight={"600"}  rightIcon={<ChevronDownIcon/>} >Activity</MenuButton>
+                   <Portal>
+                    <MenuList>
+                    <MenuItem onClick={Journel} >ToDo List</MenuItem>
+                    <MenuItem onClick={Todo}>Journal</MenuItem>
+                    </MenuList>
+                   </Portal>
+                  </Menu>   
 
-             <Button onClick={Journel}
-                   
-                  fontSize={"2xs"}
-                  borderRadius={"30px"}
-                  margin={"auto"}
-                  _hover={{bgColor:"lightgreen"}}> Journel</Button>
-
-              <Button onClick={Todo}
-                //   bgColor={"red"}
-                  fontSize={"2xs"}
-                  borderRadius={"30px"}
-                  margin={"auto"}
-                  _hover={{bgColor:"lightgreen"}}> ToDo List</Button>
-           
-
-             <Button onClick={Meditation}
-                
-                  fontSize={"2xs"}
-                  borderRadius={"30px"}
-                  margin={"auto"}
+              <Button onClick={Meditation}
+              
+                   variant={"ghost"}
                   _hover={{bgColor:"lightgreen"}}>Meditation</Button>
-
-             <Button onClick={ContactUs}
-                   
-                  fontSize={"2xs"}
-                  borderRadius={"30px"}
-                  margin={"auto"}
-                  _hover={{bgColor:"lightgreen"}}>ContactUs</Button>   
-             
-             <Button onClick={AboutUs}
-                //   bgColor={"red"}
-                  fontSize={"2xs"}
-                  borderRadius={"30px"}
-                  margin={"auto"}
-                  _hover={{bgColor:"lightgreen"}}> AboutUs</Button>
-           
-
-            <Menu>
+                 
+                   <Menu>
+                   <MenuButton  variant={"ghost"} as={Button} borderWidth={"0px"} fontSize={"0.5xl"} fontWeight={"600"}  rightIcon={<ChevronDownIcon/>} >Help</MenuButton>
+                   <Portal>
+                    <MenuList>
+                    <MenuItem onClick={AboutUs} >About Us</MenuItem>
+                    <MenuItem onClick={ContactUs}>Contact Us</MenuItem>
+                    </MenuList>
+                   </Portal>
+                  </Menu>   
+              </Box>
+             <Box width={"20%"} display={"flex"} justifyContent={"flex-end"} alignItems={"center"}>
+             <Menu>
                     <MenuButton p={1}>
                        <BellIcon fontSize={"2xl"} m={1}/> 
                     </MenuButton>
                     {/* <MenuList></MenuList> */}
                 </Menu>
                 <Menu>
-                    <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
+                    <MenuButton variant={"ghost"} as={Button} rightIcon={<ChevronDownIcon/>}>
                        <Avatar size={"sm"} cursor={"pointer"} name={user.name} src={user.pic}></Avatar>
                     </MenuButton>
                     <MenuList>
@@ -133,12 +123,11 @@ const HomePages = ()=>{
                         <MenuItem onClick={logoutHandler} >Logout</MenuItem> 
                     </MenuList>
                     </Menu>       
-                  </Box>
-                
-                  
-            
-            </Box>
 
+             </Box>
+           </Box>
+           
+             
             <Box
              display={"flex"}
              flexDirection={"column"}
@@ -152,7 +141,7 @@ const HomePages = ()=>{
         <div class="carousel-inner">
           <div class="carousel-item active container-fluid">
             <h2 class="testimonial-text">Meditation is being in tune with our inner universe.</h2>
-            <Img class="testimonial-image" src="https://chopra.brightspotcdn.com/ba/5b/a4e607054e908c357b72c88d4102/7fbroqcg.jpeg" alt="dog-profile"/>
+            <Img class="testimonial-image" src="https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/63e309aa07e4d0001dbb6cfd.jpg" alt="dog-profile"/>
             <em class="name">Meditation</em>
           </div>
           <div class="carousel-item container-fluid">
@@ -182,34 +171,34 @@ const HomePages = ()=>{
   <h3 class="big-heading">There is a crack in everything thats how the light gets in!</h3>
 </div>
 </section>
-<section class="colored-section " id="testimonials">
-<div id="testimonial-carousel" class="carousel slide" data-ride="false">
-  <div class="carousel-inner">
-    <div class="carousel-item active container-fluid">
-      <h2 class="testimonial-text">Do not let others behavior destroy your inner peace</h2>
-      <Img class="testimonial-image" src="https://media.cntraveller.com/photos/611bed66623b149193c8cd74/4:3/w_1704,h_1278,c_limit/dalai-lama-conde-nast-traveller-25nov16-rex-shutterstock.jpg" alt="dog-profile"/>
-      <em class="name">Dalai Lama</em>
+<section class="colored-section" id="testimonials">
+  <div id="testimonial-carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active container-fluid">
+        <h2 class="testimonial-text">Do not let others behavior destroy your inner peace</h2>
+        <img class="testimonial-image" src="https://media.cntraveller.com/photos/611bed66623b149193c8cd74/4:3/w_1704,h_1278,c_limit/dalai-lama-conde-nast-traveller-25nov16-rex-shutterstock.jpg" alt="dog-profile"/>
+        <em class="name">Dalai Lama</em>
+      </div>
+      <div class="carousel-item container-fluid">
+        <h2 class="testimonial-text">You are not alone..You are not the first to go through it..You will not be the last to go through it</h2>
+        <img class="testimonial-image" src="https://media.vanityfair.com/photos/5b46274a6520f70b78e5cfe5/master/pass/The-Rock-2020-Potential-Run.jpg" alt="lady-profile"/>
+        <em class="name">The Rock</em>
+      </div>
+      <div class="carousel-item container-fluid">
+        <h2 class="testimonial-text">Calmness,gentleness,silence,self-restraint and purity..These are the disciplines of the mind</h2>
+        <img class="testimonial-image" src="https://wallpapers.com/images/hd/shri-krishna-day-and-night-silhouette-2j5guszveuuuhtwo.jpg" alt="lady-profile"/>
+        <em class="name">Shri Krishna</em>
+      </div>
     </div>
-    <div class="carousel-item container-fluid">
-      <h2 class="testimonial-text">You are not alone..You are not the first to go through it..You will not be the last to go through it</h2>
-      <Img class="testimonial-image" src="https://media.vanityfair.com/photos/5b46274a6520f70b78e5cfe5/master/pass/The-Rock-2020-Potential-Run.jpg" alt="lady-profile"/>
-      <em class="name">The Rock</em>
-    </div>
-    <div class="carousel-item container-fluid">
-      <h2 class="testimonial-text">Calmness,gentleness,silence,self-restraint and purity..These are the disciplines of the mind</h2>
-      <Img class="testimonial-image" src="https://wallpapers.com/images/hd/shri-krishna-day-and-night-silhouette-2j5guszveuuuhtwo.jpg" alt="lady-profile"/>
-      <em class="name">Shri Krishna</em>
-    </div>
+    <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
   </div>
-  <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </a>
-</div>
-
 </section>
+
     <section class="white-section" id="features">
 
 <div class="container-fluid">
@@ -259,7 +248,7 @@ const HomePages = ()=>{
 </footer>
              </Box>
            
-
+   </Box>
         </>
     );
 }
